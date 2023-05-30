@@ -22,11 +22,7 @@ contract LiquidityPoolAsOracle {
         s_token2 = token2;
     }
 
-    function swap(
-        address from,
-        address to,
-        uint256 amount
-    ) external {
+    function swap(address from, address to, uint256 amount) external {
         require(
             (from == s_token1 && to == s_token2) || (from == s_token2 && to == s_token1),
             "Invalid tokens"
@@ -44,11 +40,10 @@ contract LiquidityPoolAsOracle {
         require(success, "Failed to add liquidity");
     }
 
-    function getSwapPrice(
-        address from,
-        address to,
-        uint256 amount
-    ) public view returns (uint256) {
+    // this is terrible because price from this protocol is a single centralized location
+    /// because someone may manipulate the price
+    // we want to get price from many exchange
+    function getSwapPrice(address from, address to, uint256 amount) public view returns (uint256) {
         return ((amount * IERC20(to).balanceOf(address(this))) /
             IERC20(from).balanceOf(address(this)));
     }

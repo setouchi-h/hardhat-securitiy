@@ -1,7 +1,7 @@
 {
   "name": "hardhat-security-fcc",
   "version": "1.0.0",
-  "description": "", 
+  "description": "",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
     "ethers": "^5.5.4",
@@ -27,5 +27,9 @@
     "lint": "solhint 'contracts/*.sol'",
     "lint:fix": "solhint 'contracts/**/*.sol' --fix",
     "format": "prettier --write ."
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/PatrickAlphaC/hardhat-security-fcc.git",
+  "author": "setouchi-h <setouchi.kazuki@gmail.com>",
+  "license": "MIT"
 }
