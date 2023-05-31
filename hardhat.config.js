@@ -1,11 +1,8 @@
-require("@nomiclabs/hardhat-waffle")
-require("@nomiclabs/hardhat-etherscan")
 require("hardhat-deploy")
-require("solidity-coverage")
-require("hardhat-gas-reporter")
 require("hardhat-contract-sizer")
 require("dotenv").config()
 require("@openzeppelin/hardhat-upgrades")
+require("@nomicfoundation/hardhat-toolbox")
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
